@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block main_content %}
+
+
+
+
+
+
+
+
+
+    <section class="hero">
+        <!-- Основное изображение или слайдер -->
+        <div class="hero-image">
+            <img src="{% static 'images/main-img.jpg' %}" alt="Красивая картинка животных">
+        </div>
+        <!-- Заголовок и описание -->
+        <div class="hero-content">
+            <h2>Добро пожаловать!</h2>
+            <p>Погрузитесь в атмосферу тепла и уюта с нашими пастельными товарищами. Встречайте новую коллекцию животных в пастельных тонах - ваш идеальный спутник в радостных приключениях!</p>
+            <a href="#" class="btn">Посмотреть каталог</a>
+        </div>
+    </section>
+
+    <section class="featured-products">
+        <!-- Вывод избранных товаров -->
+        <h2>Успей купить!</h2>
+        <div class="product-grid">
+            <!-- Пример карточки товара -->
+            {% for product in products %}
+            <div class="product-card">
+                <img src="{{ product.image.url }}" alt="Товар 1">
+                <h3>Название товара: {{ product.title }}</h3>
+                <p class="price">${{ product.price }}</p>
+                <a href="#" class="btn">Добавить в корзину</a>
+            </div>
+            {% endfor %}
+            <!-- Другие карточки товаров -->
+            <!-- <div class="product-card"> ... </div> -->
+            <!-- <div class="product-card"> ... </div> -->
+            <!-- <div class="product-card"> ... </div> -->
+        </div>
+
+        <h2>Ценны для покупателей</h2>
+        <div class="product-grid">
+            <!-- Пример карточки товара -->
+            {% for product in products_highest_mark %}
+            <div class="product-card">
+                <img src="{{ product.image.url }}" alt="Товар 1">
+                <h3>Название товара: {{ product.title }}</h3>
+                <p class="price">${{ product.price }}</p>
+                <a href="#" class="btn">Добавить в корзину</a>
+            </div>
+            {% endfor %}
+            <!-- Другие карточки товаров -->
+            <!-- <div class="product-card"> ... </div> -->
+            <!-- <div class="product-card"> ... </div> -->
+            <!-- <div class="product-card"> ... </div> -->
+        </div>
+    </section>
+
+
+
+
+{% endblock main_content %}
+
+

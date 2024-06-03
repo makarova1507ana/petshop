@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block main_content %}
+<div class="product-details">
+    <div class="product-info" >
+        <h2>{{ product.title }}</h2>
+        <p>Price: {{ product.price }}</p>
+        <p class="amount">В наличии: {{ product.amount }}</p>
+    </div>
+    <div class="product-image">
+        <img src="{{ product.image.url }}" alt="{{ product.title }}">
+    </div>
+</div>
+
+<div class="feedback-section">
+    <h3>Отзывы:</h3>
+    {% for feedback in feedbacks %}
+    <div class="feedback" style="background: lightyellow;">
+        <p>Rating: {{ feedback.rating }}</p>
+        <p>{{ feedback.text }}</p>
+        {% if feedback.image %}
+        <img src="{{ feedback.image.url }}" alt="Feedback Image">
+        {% endif %}
+    </div>
+    {% empty %}
+    <p>Пока нет отзывов</p>
+    {% endfor %}
+</div>
+{% endblock main_content %}

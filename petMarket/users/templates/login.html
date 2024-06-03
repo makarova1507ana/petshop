@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block main_content %}
+
+
+<div data-gb-custom-block data-tag="extends" data-0='base.html'></div>
+
+
+
+
+<div data-gb-custom-block data-tag="block">
+<h1>{{ title }}</h1>
+
+<form method="post" action="{% url 'login' %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+
+
+    <p><button type="submit">Войти</button></p>
+    <p><a href="{% url 'password_reset' %}">Забыли пароль?</a></p>
+</form>
+
+
+</div>
+
+{% endblock main_content %}

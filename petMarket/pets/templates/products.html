@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block main_content %}
+ <h1>Каталог товаров</h1>
+        <ul>
+             {% for pet in pets %}
+                <li><a href="{% url 'categories' slug=pet.slug %}">{{pet.title}}</a></li>
+            {% endfor %}
+
+        </ul>
+
+
+<h2>Товары в разделе {{pet}}</h2>
+{% for cat in categories %}
+ <ul>
+    <li><a href="#">{{cat}}</a></li>
+ </ul>
+{% endfor %}
+
+
+        <div class="product-list">
+            <!-- Здесь будут отображаться товары -->
+            {% for item in products %}
+                <a href="{% url 'product' product_id=item.id %}" >
+                    <div class="product">
+                        <p>{{ item.title }}</p>
+                        <img src="{{ item.image.url }}">
+                         <p class="amount">В наличии: {{ item.amount }}</p>
+                        <p class="price">Цена: {{ item.price }}</p>
+                        <button>Добавить в корзину</button>
+                    </div>
+                </a>
+            {% endfor %}
+        </div>
+{% endblock main_content %}

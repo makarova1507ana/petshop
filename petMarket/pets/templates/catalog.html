@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block main_content %}
+
+
+    <div class="container">
+        <h1>Каталог товаров</h1>
+        <ul>
+             {% for pet in pets %}
+                <li><a href="{% url 'categories' slug=pet.slug %}">{{pet.title}}</a></li>
+            {% endfor %}
+
+        </ul>
+
+
+        <div class="product-list">
+            <!-- Здесь будут отображаться товары -->
+            {% for item in products %}
+                <a href="../product/{{item.id}}/" style="none">
+                    <div class="product">
+                        <p>{{ item.title }}</p>
+                        <img src="{{ item.image.url }}">
+                         <p class="amount">В наличии: {{ item.amount }}</p>
+                        <p class="price">Цена: {{ item.price }}</p>
+                        <button>Добавить в корзину</button>
+                    </div>
+                </a>
+            {% endfor %}
+
+        </div>
+    </div>
+
+
+
+<nav class="list-pages">
+ <ul>
+ {% for p in paginator.page_range %}
+ <li class="page-num">
+ <a href="?page={{ p }}">{{ p }}</a>
+ </li>
+     {% endfor %}
+ </ul>
+</nav>
+
+{% endblock main_content %}

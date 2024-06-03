@@ -1,0 +1,404 @@
+/*body
+{font-family: 'myFont';
+margin: 0;
+ background: linear-gradient(90deg, rgb(156,255,249) 15%,  rgb(253,253,253) 100%);
+/* color: rgba(0,0,0,0.8);
+}
+
+body.light-mode {
+            background-color: aliceblue;
+            color: rgb(56, 56, 56);
+        }
+
+body.dark-mode {
+    background-color: rgb(56, 56, 56);
+    color: aliceblue;
+
+}
+
+@font-face {
+  font-family: 'myFont';
+  src: url('../fonts/Nozhik-Bold.otf');
+}*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Основные стили */
+:root {
+    --pastel-yellow: #f8eae0; /* Пастельный желтый */
+    --pastel-purple: #7d5a9d; /* Пастельный фиолетовый */
+    --text-color-light: #e5e5d3;
+    --text-color-dark: #1f0426;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--pastel-yellow);
+    color: var(--text-color-dark);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Стили для шапки */
+.header {
+    background-color: var(--pastel-yellow);
+    padding: 20px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 50px;
+    height: auto;
+}
+
+.logo h1 {
+    font-size: 24px;
+    color: var( --text-color-dark);
+    margin-left: 10px;
+}
+
+
+/* Стили для строки поиска */
+.search-container {
+margin: 10px;
+    display: block;
+    align-items: center;
+}
+
+#search-input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+#search-button {
+    background-color: var(--pastel-purple);
+    color: var(--text-color-light);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#search-button:hover {
+    background-color: #946fae;
+}
+
+
+
+
+/* Стили для главного меню */
+.nav-menu {
+margin: 10px;
+    margin-left: auto;
+}
+
+.nav-menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.nav-menu li {
+    margin: 0 10px;
+}
+
+.nav-menu a {
+    text-decoration: none;
+
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-menu a:hover {
+    background-color: var(--pastel-purple);
+    color: var(--text-color-dark);
+}
+
+
+
+
+
+
+
+
+
+
+#theme-toggle {
+    background-color: transparent;
+    color: var( --text-color-dark);
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#theme-toggle:hover {
+    background-color: #ced4da;
+}
+
+/* Стили для героической секции */
+.hero {
+    background-color: var(--pastel-yellow);
+    padding: 50px 0;
+    text-align: center;
+}
+
+.hero h2 {
+    font-size: 36px;
+    color: var(--pastel-purple);
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 18px;
+
+    margin-bottom: 20px;
+}
+
+.btn {
+    background-color: var(--pastel-purple);
+    color: var( --text-color-dark);
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.btn:hover {
+    background-color: #946fae;
+}
+
+/* Стили для секции с избранными товарами */
+.featured-products {
+    background-color: var(--pastel-yellow);
+    padding: 50px 0;
+    text-align: center;
+}
+
+.featured-products h2 {
+    font-size: 36px;
+    color: var(--pastel-purple);
+    margin-bottom: 20px;
+}
+a{
+text-decoration: none;
+}
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 20px;
+    justify-items: center;
+}
+.product{
+ border:  1px solid #000
+}
+.product-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.product-card img {
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.product-card h3 {
+    font-size: 20px;
+
+}
+
+.price {
+    font-size: 18px;
+    color: var(--pastel-purple);
+    margin-bottom: 10px;
+}
+
+/* Стили для подвала */
+.footer {
+    background-color: var(--pastel-yellow);
+    padding: 30px 0;
+    text-align: center;
+}
+
+.footer h3 {
+    font-size: 24px;
+    color: var(--pastel-purple);
+    margin-bottom: 10px;
+}
+
+.footer p {
+    font-size: 18px;
+
+}
+
+.social-links .social-icon {
+    margin: 0 10px;
+}
+
+.social-links .social-icon img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+
+
+
+
+/* Стили для темной темы */
+.dark-mode {
+    background-color: var(--text-color-dark);
+    color: var(--text-color-light);
+}
+
+.dark-mode .header,
+.dark-mode .hero,
+.dark-mode .featured-products,
+.dark-mode .footer {
+    background-color: var(--text-color-dark);
+     color: var(--text-color-light);
+}
+
+.dark-mode .logo h1 {
+    color: var(--text-color-light);
+}
+
+.dark-mode #theme-toggle {
+    color: var(--text-color-light);
+    background-color: var(--text-color-dark);
+}
+
+.dark-mode #theme-toggle:hover {
+    background-color: #6c757d;
+}
+
+
+.dark-mode .product-card {
+    background-color: var(--text-color-dark);
+    color: var(--text-color-light);
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Медиа-запросы для адаптивности */
+@media screen and (max-width: 768px) {
+    .container {
+        width: 95%;
+    }
+
+    .logo h1 {
+        font-size: 20px;
+    }
+
+    .hero h2 {
+        font-size: 28px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .featured-products h2 {
+        font-size: 28px;
+    }
+
+    .product-card h3 {
+        font-size: 18px;
+    }
+
+    .price {
+        font-size: 16px;
+    }
+
+    .footer h3 {
+        font-size: 20px;
+    }
+
+    .footer p {
+        font-size: 16px;
+    }
+}

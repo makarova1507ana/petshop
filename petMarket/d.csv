@@ -1,0 +1,7 @@
+id,title,image,price,slug,category_id,amount
+1,КОРМ1,products_images/top_VDuJTby.png,160,korm1,1,0
+2,korm2,products_images/top_dqsIjI5.png,222,korm2,2,0
+3,korm3,products_images/top_1B85g9x.png,234,korm3,1,1
+4,igra1,products_images/top_hW7Ucp7.png,5,igra1,3,2
+5,igra2,products_images/top_PUujBtg.png,212,igra2,3,1
+6,dom1,products_images/top_2BEVnaS.png,2128,dom1,4,5

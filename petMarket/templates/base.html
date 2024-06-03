@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pet Page</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" /> <!-- Подключаем внешний CSS -->
+
+</head>
+<body>
+<script src="{% static 'js/applytheme.js' %}"></script>
+    <header class="header">
+
+     <button id="theme-toggle">Сменить тему</button>
+        <!-- Логотип и название магазина -->
+        <div class="logo">
+            <img src="{% static 'images/logo.jpg' %}" alt="Логотип магазина">
+            <h1>Магазин </h1>
+        </div>
+<div class="user-name">
+
+        {% if user.is_authenticated %} <!--Авторизован пользователь?-->
+         <li class="last"><a href="{% url 'profile' %}"> {{user.username}}</a> | <a href="{% url 'logout' %}">Выйти</a></li>
+        {% else %}<!-- не авторизован-->
+            <li class="last"><a href="{% url 'login' %}">Войти</a> | <a href="{% url 'register' %}">Регистрация</a></li>
+        {% endif %}
+
+</div>
+
+        <!-- Навигационное меню -->
+        <nav class="nav-menu">
+            <ul>
+
+
+                <li><a href="{% url 'main_url' %}">Главная</a></li>
+                <li><a href="{% url 'catalog' %}">Каталог</a>
+
+                </li>
+                <li><a href="#">О нас</a></li>
+                <li><a href="#">Контакты</a></li>
+            </ul>
+        </nav>
+        <!--Поиск-->
+<form method="get" action="petGET/" class="search-container">
+ <label for="search-input">Search :</label>
+  <input type="search" id="search-input" name="search_field"  placeholder="Поиск..."> <!--name - параметр запроса-->
+  <input type="submit" id="search-button" value="Submit">
+</form>
+
+
+
+    </header>
+
+
+
+
+
+
+{% block main_content %}
+<!--Содержимое страницы-->
+
+{% endblock main_content %}
+
+    <footer class="footer">
+        <!-- Информация о магазине -->
+        <div class="footer-info">
+            <h3>Магазин</h3>
+            <p>Адрес: ул. Пастельная, 123, г. Пастельный</p>
+            <p>Email: info@pastelanimals.com</p>
+            <p>Телефон: +123 456 7890</p>
+        </div>
+        <!-- Ссылки на социальные сети -->
+        <div class="social-links">
+            <a href="#" class="social-icon"><img src="facebook-icon.png" alt="Facebook"></a>
+            <a href="#" class="social-icon"><img src="twitter-icon.png" alt="Twitter"></a>
+            <a href="#" class="social-icon"><img src="instagram-icon.png" alt="Instagram"></a>
+        </div>
+    </footer>
+
+<script src="{% static 'js/script.js' %}"></script>
+
+</body>
+</html>
